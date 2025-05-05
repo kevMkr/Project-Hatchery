@@ -217,7 +217,6 @@ main {
         padding: 0 0.2rem 2rem 0.2rem;
     }
 }
-
 .recipe-detail-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -241,7 +240,7 @@ main {
     align-items: center;
     padding: 1.2rem 1.2rem 0.5rem 1.2rem;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 .back-btn, .share-btn {
     background: rgba(255,255,255,0.8);
@@ -264,12 +263,12 @@ main {
 }
 .detail-image {
     width: 100%;
-    max-height: 220px;
+    max-height: 300px;
     object-fit: cover;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
     margin-bottom: -32px;
-    z-index: 1;
+    z-index: 2;
 }
 .like-btn {
     position: absolute;
@@ -295,13 +294,11 @@ main {
     color: #fff;
 }
 .detail-content {
-    background: rgba(255,255,255,0.95);
     border-radius: 24px;
     margin-top: 2.5rem;
     padding: 2rem 1.2rem 1.5rem 1.2rem;
     width: 95%;
     max-width: 420px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -321,10 +318,12 @@ main {
     justify-content: center;
 }
 .detail-tags .tag-btn {
-    font-size: 0.9rem;
-    padding: 0.3rem 1rem;
-    border-radius: 16px;
-    border-width: 1px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 25px;
+    padding: 5px 15px;
+    font-weight: bold;
+    box-shadow: 4px 4px 0px black;
 }
 .detail-times {
     display: flex;
@@ -353,17 +352,20 @@ main {
     width: 100%;
 }
 .start-cooking-btn {
-    width: 100%;
-    background: #6fcf97;
-    color: #fff;
+    width: 80%;
+    max-width: 320px;
     border: none;
-    border-radius: 8px;
-    padding: 0.9rem 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: background 0.2s;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 5px 5px 0 black;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.95em;
 }
 .start-cooking-btn:hover {
     background: #388e3c;
