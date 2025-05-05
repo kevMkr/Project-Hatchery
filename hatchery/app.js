@@ -49,6 +49,11 @@ let likedRecipes = JSON.parse(localStorage.getItem('likedRecipes') || '{}');
 
 // Initialize the app
 function init() {
+    let params = new URLSearchParams(document.location.search);
+    if(params.has("id")){
+        openRecipeDetail(params.get("id"));
+        console.log(params.get("id"));
+    }
     displayRecipes(recipes);
     setupEventListeners();
     setActiveTagButton('');
@@ -77,7 +82,12 @@ function createRecipeCard(recipe) {
             <p>${recipe.description.substring(0, 60)}...</p>
         </div>
     `;
-    card.addEventListener('click', () => openRecipeDetail(recipe.id));
+    card.addEventListener('click', () => {
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set('id', recipe.id);
+        window.history.pushState({}, '', newUrl);
+        openRecipeDetail(recipe.id);
+    });
     return card;
 }
 
@@ -99,7 +109,8 @@ function filterRecipes() {
 
 // --- Detail Overlay Logic ---
 function openRecipeDetail(recipeId) {
-    const recipe = recipes.find(r => r.id === recipeId);
+    console.log(recipeId);
+    const recipe = recipes.find(r => r.id === Number(recipeId));
     if (!recipe) return;
     currentRecipe = recipe;
     detailImage.src = recipe.image;
