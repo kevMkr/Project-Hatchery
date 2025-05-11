@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if user is already logged in
     if (localStorage.getItem('isLoggedIn') === 'true') {
-        window.location.href = 'index.html';
+        window.location.href = 'homepage.html';
         return;
     }
 
