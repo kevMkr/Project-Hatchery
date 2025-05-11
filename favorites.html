@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .back-btn {
+            background: #fff;
+            color: #00b0ff;
+            border: none;
+            border-radius: 999px;
+            padding: 0.5rem 1.2rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin: 1rem 0 1rem 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .back-btn:hover {
+            background: #00b0ff;
+            color: #fff;
+        }
+        .favorites-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        .recipes-container {
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg">
+        <header>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            <div class="favorites-title">Favorites</div>
+        </header>
+        <main>
+            <div class="recipes-container" id="favoritesContainer"></div>
+        </main>
+    </div>
+    <script>
+        // Sample recipe data (should match app.js)
+        const recipes = [
+            {
+                id: 1,
+                title: "Classic Chocolate Cake",
+                category: "dessert",
+                tags: ["Sweet", "Snack"],
+                waitingTime: "10 Min.",
+                cookingTime: "30 Min.",
+                image: "choc.jpg",
+                description: "A rich and moist chocolate cake perfect for any occasion. The most common way to make fries is by deep-frying them in huge amounts of unhealthy oil. This recipe makes them a healthier snack alternative, as it has a lower glycemic index, reduces sodium intake, gluten-free, allergy-friendly, and lower in unhealthy fats and calories. This will surely prepare you a delicious tasty snack packed with not only vitamins, but contains only a little of high-quality oil.",
+            },
+            {
+                id: 2,
+                title: "Avocado Toast",
+                category: "breakfast",
+                tags: ["Easy", "Savory", "Healthy"],
+                waitingTime: "5 Min.",
+                cookingTime: "5 Min.",
+                image: "avoc.jpg",
+                description: "Simple and healthy breakfast option. Toast bread, mash avocado, spread on toast, season to taste. A great way to start your day!",
+            }
+        ];
+        const favoritesContainer = document.getElementById('favoritesContainer');
+        const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes') || '[]');
+        function displayFavorites() {
+            favoritesContainer.innerHTML = '';
+            const favs = recipes.filter(r => favoriteRecipes.includes(r.id));
+            if (favs.length === 0) {
+                favoritesContainer.innerHTML = '<div style="text-align:center;width:100%;color:#888;">No favorites yet.</div>';
+                return;
+            }
+            favs.forEach(recipe => {
+                const card = document.createElement('div');
+                card.className = 'recipe-card';
+                card.innerHTML = `
+                    <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
+                    <div class="recipe-content">
+                        <h2 class="recipe-title">${recipe.title}</h2>
+                        <div class="recipe-meta">
+                            <span>${recipe.category.charAt(0).toUpperCase() + recipe.category.slice(1)}</span>
+                        </div>
+                        <p>${recipe.description.substring(0, 60)}...</p>
+                    </div>
+                `;
+                favoritesContainer.appendChild(card);
+            });
+        }
+        displayFavorites();
+    </script>
+</body>
+</html> 
