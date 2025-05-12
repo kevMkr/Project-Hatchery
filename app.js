@@ -170,11 +170,6 @@ function shareCurrentRecipe() {
         window.open(shareUrl);
     }
 }
-
-function startCooking() {
-    alert('Let\'s start cooking! (You can add step-by-step instructions here.)');
-}
-
 // Set up event listeners
 function setupEventListeners() {
     searchButton.addEventListener('click', filterRecipes);
@@ -206,6 +201,54 @@ function setActiveTagButton(tag) {
         }
     });
 }
+function loadRecipeByTitle(title) {
+  const recipe = recipes.find(r => r.title === title);
+  if (recipe) {
+    loadRecipe(recipe);
+  } else {
+    console.error("Recipe not found:", title);
+  }
+}
+
+// Function to display the recipe details
+function loadRecipe(recipe) {
+  // Display the recipe title
+  document.getElementById('recipe-title').textContent = recipe.title;
+
+  // Display the ingredients
+  const ingredientsContainer = document.getElementById('recipe-ingredients');
+  ingredientsContainer.innerHTML = '';
+  recipe.ingredients.forEach(ingredient => {
+    const li = document.createElement('li');
+    li.textContent = ingredient;
+    ingredientsContainer.appendChild(li);
+  });
+
+  // Display the steps
+  const stepsContainer = document.getElementById('recipe-steps-container');
+  stepsContainer.innerHTML = '';
+  recipe.steps.forEach((step, index) => {
+    const stepDiv = document.createElement('div');
+    stepDiv.classList.add('recipe-step');
+
+    const stepNumber = document.createElement('h3');
+    stepNumber.textContent = `Step ${index + 1}`;
+    stepDiv.appendChild(stepNumber);
+
+    const stepText = document.createElement('p');
+    stepText.textContent = step;
+    stepDiv.appendChild(stepText);
+
+    stepsContainer.appendChild(stepDiv);
+  });
+}
+
+// Example: Load the first recipe on page load
+document.addEventListener('DOMContentLoaded', () => {
+  if (recipes.length > 0) {
+    loadRecipe(recipes[0]);
+  }
+});
 
 // Check login state
 function checkLoginState() {
