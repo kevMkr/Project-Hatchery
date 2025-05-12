@@ -9,6 +9,19 @@ const recipes = [
         cookingTime: "30 Min.",
         image: "chocolatepeanutballs.jpg",
         description: "These chocolate peanut butter no-bake energy bites taste just like a cookie, although they are full of protein and naturally sweetened.",
+        ingredients: [
+            "1 cup oats",
+            "1/2 cup peanut butter",
+            "1/3 cup honey",
+            "1/4 cup cocoa powder",
+            "1/4 cup mini chocolate chips"
+        ],
+        steps: [
+            "Mix all ingredients in a bowl.",
+            "Roll mixture into bite-sized balls.",
+            "Chill in the refrigerator for 30 minutes.",
+            "Enjoy or store for later."
+        ]
     },
     {
         id: 2,
@@ -19,6 +32,18 @@ const recipes = [
         cookingTime: "5 Min.",
         image: "avoc.jpg",
         description: "Simple and healthy breakfast option. Toast bread, mash avocado, spread on toast, season to taste. A great way to start your day!",
+          ingredients: [
+            "2 slices of bread",
+            "1 ripe avocado",
+            "Salt and pepper to taste",
+            "Lemon juice (optional)"
+        ],
+        steps: [
+            "Toast the bread slices.",
+            "Mash the avocado in a bowl.",
+            "Spread avocado on toasted bread.",
+            "Season with salt, pepper, and lemon juice."
+        ]
     }
 ];
 
