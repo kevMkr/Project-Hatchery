@@ -1,12 +1,13 @@
 const recipes = [
   {
-    title: "Pancakes",
-    ingredients: ["flour", "milk", "egg"],
+    title: "Chocolate Peanut Butter Energy Ball",
+    ingredients: ["oats", "cacao powder", "honey","peanut butter","chocolate chips"],
     steps: [
-      "Mix all ingredients in a bowl.",
-      "Heat a pan over medium heat.",
-      "Pour batter and cook until golden.",
-      "Flip and cook the other side."
+      "Mix all the dry ingredients.",
+      "Mix in the weting.",
+      "Add choco chips last.",
+      "Roll them into small balls to your preferences.",
+      "Note: keep it in fridge for a 2-3 days at best."
     ]
   },
   {

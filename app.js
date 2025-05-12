@@ -2,13 +2,13 @@
 const recipes = [
     {
         id: 1,
-        title: "Classic Chocolate Cake",
-        category: "dessert",
+        title: "Chocolate Peanut Butter Energy Ball",
+        category: "Dessert",
         tags: ["Sweet", "Snack"],
         waitingTime: "10 Min.",
         cookingTime: "30 Min.",
-        image: "choc.jpg",
-        description: "A rich and moist chocolate cake perfect for any occasion. The most common way to make fries is by deep-frying them in huge amounts of unhealthy oil. This recipe makes them a healthier snack alternative, as it has a lower glycemic index, reduces sodium intake, gluten-free, allergy-friendly, and lower in unhealthy fats and calories. This will surely prepare you a delicious tasty snack packed with not only vitamins, but contains only a little of high-quality oil.",
+        image: "chocolatepeanutballs.jpg",
+        description: "These chocolate peanut butter no-bake energy bites taste just like a cookie, although they are full of protein and naturally sweetened.",
     },
     {
         id: 2,
@@ -212,28 +212,20 @@ function loadRecipeByTitle(title) {
 
 // Function to display the recipe details
 function loadRecipe(recipe) {
-  // Display the recipe title
-  document.getElementById('recipe-title').textContent = recipe.title;
-
-  // Display the ingredients
-  const ingredientsContainer = document.getElementById('recipe-ingredients');
-  ingredientsContainer.innerHTML = '';
-  recipe.ingredients.forEach(ingredient => {
-    const li = document.createElement('li');
-    li.textContent = ingredient;
-    ingredientsContainer.appendChild(li);
-  });
-
-  // Display the steps
   const stepsContainer = document.getElementById('recipe-steps-container');
-  stepsContainer.innerHTML = '';
+  if (!stepsContainer) {
+    console.error('Recipe steps container not found.');
+    return;
+  }
+  stepsContainer.innerHTML = ''; // Clear previous steps
+
   recipe.steps.forEach((step, index) => {
     const stepDiv = document.createElement('div');
     stepDiv.classList.add('recipe-step');
 
-    const stepNumber = document.createElement('h3');
-    stepNumber.textContent = `Step ${index + 1}`;
-    stepDiv.appendChild(stepNumber);
+    const stepTitle = document.createElement('h3');
+    stepTitle.textContent = `Step ${index + 1}`;
+    stepDiv.appendChild(stepTitle);
 
     const stepText = document.createElement('p');
     stepText.textContent = step;
@@ -275,3 +267,15 @@ document.addEventListener('DOMContentLoaded', function() {
     checkLoginState();
     init();
 }); 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const startCookingButton = document.getElementById('start-cooking-button');
+  if (startCookingButton) {
+    startCookingButton.addEventListener('click', () => {
+      const selectedRecipe = recipes[0]; // Replace with logic to get the selected recipe
+      loadRecipe(selectedRecipe);
+    });
+  } else {
+    console.error('Start Cooking button not found.');
+  }
+});

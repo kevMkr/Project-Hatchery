@@ -497,3 +497,14 @@ main {
     height: 150px;
     overflow: hidden;
 } 
+.recipe-step {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.recipe-step h3 {
+  margin-top: 0;
+}
