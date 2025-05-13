@@ -3,7 +3,7 @@ const recipes = [
     {
         id: 1,
         title: "Chocolate Peanut Butter Energy Ball",
-        category: "Dessert",
+        category: "dessert",
         tags: ["Easy","Sweet", "Snack"],
         waitingTime: "10 Min.",
         cookingTime: "30 Min.",
@@ -52,7 +52,7 @@ const recipes = [
     {
         id: 3,
         title: "Mochi",
-        category: "Dessert",
+        category: "dessert",
         tags: ["Easy", "Sweet", "Healthy"],
         waitingTime: "5 Min.",
         cookingTime: "5 Min.",
@@ -76,7 +76,7 @@ const recipes = [
     {
         id: 4,
         title: "Yogurt Protein Power Rolls",
-        category: "Dessert",
+        category: "dessert",
         tags: ["Easy", "Sweet", "Healthy"],
         waitingTime: "40 Min.",
         cookingTime: "5 Min.",
