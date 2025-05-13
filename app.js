@@ -122,6 +122,38 @@ const recipes = [
             "6. Sprinkle the dried herbs, salt, and pepper over everything.",
             "7. Bake for 15-20 minutes, or until the salmon is cooked through and flakes easily with a fork, and the asparagus is tender-crisp."
         ]
+    },
+    {
+        id: 6,
+        title: "Quick Mediterranean Quinoa Salad",
+        category: "lunch",
+        tags: ["Easy", "Healthy", "Quick", "Vegetarian"],
+        waitingTime: "15 Min.", 
+        cookingTime: "15 Min.", 
+        image: "QuinaSalad.jpg", 
+        description: "A fresh and flavorful Mediterranean-inspired quinoa salad that's perfect for a light and healthy lunch.",
+        ingredients: [
+        "Cooked Quinoa",
+        "Cucumber",
+        "Cherry Tomatoes",
+        "Red Onion",
+        "Feta Cheese (crumbled)",
+        "Kalamata Olives (pitted)",
+        "Fresh Parsley",
+        "Lemon Juice",
+        "Olive Oil",
+        "Salt",
+        "Black Pepper"
+        ],
+        instructions: [
+        "1. If not using pre-cooked quinoa, cook 1/2 cup of dry quinoa according to package directions and let it cool.",
+        "2. While the quinoa cools, finely dice the cucumber and red onion, and halve the cherry tomatoes.",
+        "3. In a large bowl, combine the cooled quinoa, diced cucumber, cherry tomatoes, red onion, crumbled feta cheese, and pitted Kalamata olives.",
+        "4. Chop the fresh parsley and add it to the bowl.",
+        "5. In a small bowl, whisk together the fresh lemon juice and olive oil. Season with salt and black pepper to taste.",
+        "6. Pour the dressing over the salad ingredients and gently toss to combine.",
+        "7. Serve immediately or refrigerate for later. Flavors meld nicely if chilled for at least 10-15 minutes."
+        ]
     }
 ];
 
