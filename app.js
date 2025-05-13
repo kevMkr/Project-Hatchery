@@ -18,11 +18,11 @@ const recipes = [
             "Salt"
         ],
         instructions: [
-            "Put 1 cup rolled oats, 1/2 cup peanut butter, 1/3 cup chocolate chips, 2 tablespoons honey, 1 teaspoon vanilla extract, and a pinch of salt in a medium bowl",
-            "Combine all ingredients in a medium bowl.",
-            "Mix well until everything is evenly incorporated.",
-            "Roll mixture into small balls.",
-            "Place on a baking sheet and refrigerate for at least 30 minutes."
+            "1. Put 1 cup rolled oats, 1/2 cup peanut butter, 1/3 cup chocolate chips, 2 tablespoons honey, 1 teaspoon vanilla extract, and a pinch of salt in a medium bowl",
+            "2. Combine all ingredients in a medium bowl.",
+            "3. Mix well until everything is evenly incorporated.",
+            "4. Roll mixture into small balls.",
+            "5. Place on a baking sheet and refrigerate for at least 30 minutes."
         ]
     },
     {
@@ -38,15 +38,14 @@ const recipes = [
             "Whole-wheat bread",
             "Ripe avocado",
             "Salt",
-            "Pepper",
-            "Optional: red pepper flakes, everything bagel seasoning"
+            "Pepper"
         ],
         instructions: [
-            "Toast the bread to your desired level of crispness.",
-            "While the bread is toasting, mash the avocado in a small bowl.",
-            "Season the mashed avocado with salt, pepper, and any other desired seasonings.",
-            "Spread the avocado mixture evenly over the toasted bread.",
-            "Serve immediately."
+            "1. Toast the bread to your desired level of crispness.",
+            "2. While the bread is toasting, mash the avocado in a small bowl.",
+            "3. Season the mashed avocado with salt, pepper, and any other desired seasonings.",
+            "4. Spread the avocado mixture evenly over the toasted bread.",
+            "5. Serve immediately."
         ]
     },
     {
@@ -89,11 +88,39 @@ const recipes = [
             "Chocolate chips/bar",
         ],
         instructions: [
-            "Mix together 1 scoop of protein powder and 1/2 cup of yogurt in a bowl, then mix it.",
-            "Add in the berries, and coat it in the yogurt mixture, then place clusters on wax paper.",
-            "Freeze for 30 min or until frozen.",
-            "Melt the chocolate, and dip the clusters in chocolate.",
-            "Put it back in the freezer."
+            "1. Mix together 1 scoop of protein powder and 1/2 cup of yogurt in a bowl, then mix it.",
+            "2. Add in the berries, and coat it in the yogurt mixture, then place clusters on wax paper.",
+            "3. Freeze for 30 min or until frozen.",
+            "4. Melt the chocolate, and dip the clusters in chocolate.",
+            "5. Put it back in the freezer."
+        ]
+    },
+    {
+        id: 5,
+        title: "Simple Lemon Herb Baked Salmon with Asparagus",
+        category: "dinner",
+        tags: ["Easy", "Quick", "Healthy"],
+        waitingTime: "5 Min.",
+        cookingTime: "20 Min.",
+        image: "salmonasparagus.jpg",
+        description: "A quick and healthy one-pan dinner featuring flaky baked salmon and tender asparagus seasoned with lemon and herbs.",
+        ingredients: [
+            "Salmon Fillets",
+            "Fresh Asparagus",
+            "Lemon",
+            "Olive Oil",
+            "Dried Herbs",
+            "Salt",
+            "Black Pepper"
+        ],
+        instructions: [
+            "1. Preheat your oven to 400°F (200°C). Line a baking sheet with parchment paper.",
+            "2. Wash and trim the woody ends off the asparagus spears. Place them on one side of the baking sheet.",
+            "3. Place the salmon fillets on the other side of the baking sheet.",
+            "4. Drizzle both the salmon and asparagus with olive oil.",
+            "5. Squeeze fresh lemon juice over the salmon and asparagus.",
+            "6. Sprinkle the dried herbs, salt, and pepper over everything.",
+            "7. Bake for 15-20 minutes, or until the salmon is cooked through and flakes easily with a fork, and the asparagus is tender-crisp."
         ]
     }
 ];
