@@ -4,20 +4,21 @@ const recipes = [
         id: 1,
         title: "Chocolate Peanut Butter Energy Ball",
         category: "Dessert",
-        tags: ["Sweet", "Snack"],
+        tags: ["Easy","Sweet", "Snack"],
         waitingTime: "10 Min.",
         cookingTime: "30 Min.",
         image: "chocolatepeanutballs.jpg",
         description: "These chocolate peanut butter no-bake energy bites taste just like a cookie, although they are full of protein and naturally sweetened.",
         ingredients: [
-            "1 cup rolled oats",
-            "1/2 cup peanut butter",
-            "1/3 cup chocolate chips",
-            "2 tablespoons honey",
-            "1 teaspoon vanilla extract",
-            "Pinch of salt"
+            "Rolled oats",
+            "Peanut butter",
+            "Chocolate chips",
+            "Honey",
+            "Vanilla extract",
+            "Salt"
         ],
         instructions: [
+            "Put 1 cup rolled oats, 1/2 cup peanut butter, 1/3 cup chocolate chips, 2 tablespoons honey, 1 teaspoon vanilla extract, and a pinch of salt in a medium bowl",
             "Combine all ingredients in a medium bowl.",
             "Mix well until everything is evenly incorporated.",
             "Roll mixture into small balls.",
@@ -26,7 +27,7 @@ const recipes = [
     },
     {
         id: 2,
-        title: "wdaw",
+        title: "Avocado Toast",
         category: "breakfast",
         tags: ["Easy", "Savory", "Healthy"],
         waitingTime: "5 Min.",
@@ -34,10 +35,10 @@ const recipes = [
         image: "avoc.jpg",
         description: "Simple and healthy breakfast option. Toast bread, mash avocado, spread on toast, season to taste. A great way to start your day!",
         ingredients: [
-            "2 slices whole-wheat bread",
-            "1 ripe avocado",
-            "Salt to taste",
-            "Pepper to taste",
+            "Whole-wheat bread",
+            "Ripe avocado",
+            "Salt",
+            "Pepper",
             "Optional: red pepper flakes, everything bagel seasoning"
         ],
         instructions: [
@@ -46,6 +47,53 @@ const recipes = [
             "Season the mashed avocado with salt, pepper, and any other desired seasonings.",
             "Spread the avocado mixture evenly over the toasted bread.",
             "Serve immediately."
+        ]
+    },
+    {
+        id: 3,
+        title: "Mochi",
+        category: "Dessert",
+        tags: ["Easy", "Sweet", "Healthy"],
+        waitingTime: "5 Min.",
+        cookingTime: "5 Min.",
+        image: "mochi.webp",
+        description: "Mochi is a Japanese rice cake made from glutinous rice, known for its soft, stretchy, and chewy texture.",
+        ingredients: [
+            "Glutinous rice flour",
+            "Sugar",
+            "Food coloring/dye",
+            "Cornstarch",
+            "Sorbet/Ice-cream"
+        ],
+        instructions: [
+            "Toast the bread to your desired level of crispness.",
+            "While the bread is toasting, mash the avocado in a small bowl.",
+            "Season the mashed avocado with salt, pepper, and any other desired seasonings.",
+            "Spread the avocado mixture evenly over the toasted bread.",
+            "Serve immediately."
+        ]
+    },
+    {
+        id: 4,
+        title: "Yogurt Protein Power Rolls",
+        category: "Dessert",
+        tags: ["Easy", "Sweet", "Healthy"],
+        waitingTime: "40 Min.",
+        cookingTime: "5 Min.",
+        image: "YogurtProtein.png",
+        description: "Simple and Healthy snack option. It serves with pack of protein while still satisfying your sweet tooth.",
+        ingredients: [
+            "Protein Powder",
+            "Yogurt",
+            "Any kind of berries",
+            "Chocolate chips/bar",
+        ],
+        instructions: [
+            "Mix together 1 scoop of protein powder and 1/2 cup of yogurt in a bowl, then mix it.",
+            "Add in the berries, and coat it in the yogurt mixture, then place clusters on wax paper.",
+            "Freeze for 30 min or until frozen.",
+            "Melt the chocolate, and dip the clusters in chocolate.",
+            "Put it back in the freezer."
         ]
     }
 ];
