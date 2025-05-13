@@ -10,39 +10,42 @@ const recipes = [
         image: "chocolatepeanutballs.jpg",
         description: "These chocolate peanut butter no-bake energy bites taste just like a cookie, although they are full of protein and naturally sweetened.",
         ingredients: [
-            "1 cup oats",
+            "1 cup rolled oats",
             "1/2 cup peanut butter",
-            "1/3 cup honey",
-            "1/4 cup cocoa powder",
-            "1/4 cup mini chocolate chips"
+            "1/3 cup chocolate chips",
+            "2 tablespoons honey",
+            "1 teaspoon vanilla extract",
+            "Pinch of salt"
         ],
-        steps: [
-            "Mix all ingredients in a bowl.",
-            "Roll mixture into bite-sized balls.",
-            "Chill in the refrigerator for 30 minutes.",
-            "Enjoy or store for later."
+        instructions: [
+            "Combine all ingredients in a medium bowl.",
+            "Mix well until everything is evenly incorporated.",
+            "Roll mixture into small balls.",
+            "Place on a baking sheet and refrigerate for at least 30 minutes."
         ]
     },
     {
         id: 2,
-        title: "Avocado Toast",
+        title: "wdaw",
         category: "breakfast",
         tags: ["Easy", "Savory", "Healthy"],
         waitingTime: "5 Min.",
         cookingTime: "5 Min.",
         image: "avoc.jpg",
         description: "Simple and healthy breakfast option. Toast bread, mash avocado, spread on toast, season to taste. A great way to start your day!",
-          ingredients: [
-            "2 slices of bread",
+        ingredients: [
+            "2 slices whole-wheat bread",
             "1 ripe avocado",
-            "Salt and pepper to taste",
-            "Lemon juice (optional)"
+            "Salt to taste",
+            "Pepper to taste",
+            "Optional: red pepper flakes, everything bagel seasoning"
         ],
-        steps: [
-            "Toast the bread slices.",
-            "Mash the avocado in a bowl.",
-            "Spread avocado on toasted bread.",
-            "Season with salt, pepper, and lemon juice."
+        instructions: [
+            "Toast the bread to your desired level of crispness.",
+            "While the bread is toasting, mash the avocado in a small bowl.",
+            "Season the mashed avocado with salt, pepper, and any other desired seasonings.",
+            "Spread the avocado mixture evenly over the toasted bread.",
+            "Serve immediately."
         ]
     }
 ];
@@ -66,7 +69,8 @@ const detailCookingTime = document.getElementById('detailCookingTime');
 const detailDescription = document.getElementById('detailDescription');
 const likeBtn = document.getElementById('likeBtn');
 const detailShareBtn = document.getElementById('detailShareBtn');
-const backBtn = document.getElementById('backBtn');
+const ingredientsListElement = document.getElementById('ingredients-list');  
+const instructionsTextElement = document.getElementById('instructions-text');  
 const startCookingBtn = document.getElementById('startCookingBtn');
 
 
@@ -143,8 +147,6 @@ function openRecipeDetail(recipeId) {
     detailImage.src = recipe.image;
     detailTitle.textContent = recipe.title + ' - 100% guilt-free';
     detailTags.innerHTML = '';
-    detailIngredients.innerHTML = '';
-    detailSteps.innerHTML = '';
     (recipe.tags || []).forEach(tag => {
         const tagEl = document.createElement('span');
         tagEl.className = 'tag-btn';
@@ -155,6 +157,19 @@ function openRecipeDetail(recipeId) {
     detailCookingTime.textContent = recipe.cookingTime || '-';
     detailDescription.innerHTML = `<b>Who doesn't like a healthy snack?</b><br>${recipe.description}`;
     updateLikeBtn();
+    ingredientsListElement.innerHTML = '';  
+    instructionsTextElement.innerHTML = ''; 
+    recipe.ingredients.forEach(ingredient => {
+        const li = document.createElement('li');
+        li.textContent = ingredient;
+        ingredientsListElement.appendChild(li);
+    });
+
+    recipe.instructions.forEach(instruction => {
+        const p = document.createElement('p'); 
+        p.textContent = instruction;
+        instructionsTextElement.appendChild(p);
+    });
     recipeDetailOverlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 
@@ -231,46 +246,6 @@ function setActiveTagButton(tag) {
         }
     });
 }
-function loadRecipeByTitle(title) {
-  const recipe = recipes.find(r => r.title === title);
-  if (recipe) {
-    loadRecipe(recipe);
-  } else {
-    console.error("Recipe not found:", title);
-  }
-}
-
-// Function to display the recipe details
-function loadRecipe(recipe) {
-  const stepsContainer = document.getElementById('recipe-steps-container');
-  if (!stepsContainer) {
-    console.error('Recipe steps container not found.');
-    return;
-  }
-  stepsContainer.innerHTML = ''; // Clear previous steps
-
-  recipe.steps.forEach((step, index) => {
-    const stepDiv = document.createElement('div');
-    stepDiv.classList.add('recipe-step');
-
-    const stepTitle = document.createElement('h3');
-    stepTitle.textContent = `Step ${index + 1}`;
-    stepDiv.appendChild(stepTitle);
-
-    const stepText = document.createElement('p');
-    stepText.textContent = step;
-    stepDiv.appendChild(stepText);
-
-    stepsContainer.appendChild(stepDiv);
-  });
-}
-
-// Example: Load the first recipe on page load
-document.addEventListener('DOMContentLoaded', () => {
-  if (recipes.length > 0) {
-    loadRecipe(recipes[0]);
-  }
-});
 
 // Check login state
 function checkLoginState() {
