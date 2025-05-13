@@ -365,12 +365,12 @@ main {
     width: 100%;
 }
 .start-cooking-btn {
-    width: 80%;
-    max-width: 320px;
+    width: 150%;
+    max-width: 350px;
     border: none;
-    border-radius: 30px;
-    background-color: white;
-    box-shadow: 5px 5px 0 black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 5px 5px;
     font-weight: bold;
     padding: 10px;
     margin-bottom: 15px;
@@ -378,11 +378,10 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-size: 0.95em;
+    font-size: 1;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.start-cooking-btn:hover {
-    background: #388e3c;
-}
+
 @media (max-width: 600px) {
     .detail-content {
         padding: 1.2rem 0.5rem 1rem 0.5rem;
