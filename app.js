@@ -55,6 +55,7 @@ const filterToggle = document.getElementById('filterToggle');
 const tagFilters = document.getElementById('tagFilters');
 const tagBtns = () => document.querySelectorAll('.tag-btn');
 
+
 // Detail overlay elements
 const recipeDetailOverlay = document.getElementById('recipeDetailOverlay');
 const detailImage = document.getElementById('detailImage');
@@ -67,6 +68,7 @@ const likeBtn = document.getElementById('likeBtn');
 const detailShareBtn = document.getElementById('detailShareBtn');
 const backBtn = document.getElementById('backBtn');
 const startCookingBtn = document.getElementById('startCookingBtn');
+
 
 let activeTag = '';
 let currentRecipe = null;
@@ -141,6 +143,8 @@ function openRecipeDetail(recipeId) {
     detailImage.src = recipe.image;
     detailTitle.textContent = recipe.title + ' - 100% guilt-free';
     detailTags.innerHTML = '';
+    detailIngredients.innerHTML = '';
+    detailSteps.innerHTML = '';
     (recipe.tags || []).forEach(tag => {
         const tagEl = document.createElement('span');
         tagEl.className = 'tag-btn';
@@ -153,6 +157,7 @@ function openRecipeDetail(recipeId) {
     updateLikeBtn();
     recipeDetailOverlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+
 }
 
 function closeRecipeDetail() {
@@ -292,15 +297,3 @@ document.addEventListener('DOMContentLoaded', function() {
     checkLoginState();
     init();
 }); 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const startCookingButton = document.getElementById('start-cooking-button');
-  if (startCookingButton) {
-    startCookingButton.addEventListener('click', () => {
-      const selectedRecipe = recipes[0]; // Replace with logic to get the selected recipe
-      loadRecipe(selectedRecipe);
-    });
-  } else {
-    console.error('Start Cooking button not found.');
-  }
-});
