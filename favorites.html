@@ -48,8 +48,7 @@
             <div class="recipes-container" id="favoritesContainer"></div>
         </main>
     </div>
-    <script src="app.js">
-        // Sample recipe data (should match app.js)
+    <script>
         const recipes = [
                 {
                 id: 1,
@@ -150,7 +149,6 @@
         ];
         const favoritesContainer = document.getElementById('favoritesContainer');
         const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes') || '[]');
-        const recipesContainer = document.getElementById('favoriteRecipesContainer'); // Make sure this ID matches your HTML
         function displayFavorites() {
             favoritesContainer.innerHTML = '';
             const favs = recipes.filter(r => favoriteRecipes.includes(r.id));
@@ -174,46 +172,6 @@
                 favoritesContainer.appendChild(card);
             });
         }
-        function displayFavoriteRecipes() {
-            recipesContainer.innerHTML = '';
-            if (favoriteRecipes.length === 0) {
-                recipesContainer.innerHTML = '<p>No favorite recipes yet.</p>';
-                return;
-            }
-
-            const allRecipes = JSON.parse(localStorage.getItem('allRecipes') || '[]'); // Get all recipes
-
-            favoriteRecipes.forEach(recipeId => {
-                const recipe = allRecipes.find(r => r.id === recipeId); // Find the full recipe object
-                if (recipe) { // Only display if recipe exists
-                    const recipeCard = createFavoriteRecipeCard(recipe);  // Use a new function
-                    recipesContainer.appendChild(recipeCard);
-                }
-            });
-        }
-
-
-        function createFavoriteRecipeCard(recipe) {
-            const card = document.createElement('div');
-            card.className = 'favorite-recipe-card'; // Changed class name
-            card.innerHTML = `
-                <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
-                <h2 class="recipe-title">${recipe.title}</h2>
-            `;
-            card.addEventListener('click', () => {
-                // Construct the URL to recipepage.html, passing the recipe ID as a parameter
-                const recipePageUrl = `recipepage.html?id=${recipe.id}`;
-                // Redirect the user to the recipe detail page
-                window.location.href = recipePageUrl;
-            });
-            return card;
-        }
-
-        function init() {
-            displayFavoriteRecipes();
-        }
-
-        init(); 
         displayFavorites();
     </script>
 </body>
