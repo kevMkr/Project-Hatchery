@@ -53,7 +53,7 @@ const recipes = [
         title: "Mochi",
         category: "dessert",
         tags: ["Easy", "Sweet", "Healthy"],
-        waitingTime: "5 Min.",
+        waitingTime: "1 Hour.",
         cookingTime: "5 Min.",
         image: "mochi.webp",
         description: "Mochi is a Japanese rice cake made from glutinous rice, known for its soft, stretchy, and chewy texture.",
@@ -65,11 +65,11 @@ const recipes = [
             "Sorbet/Ice-cream"
         ],
         instructions: [
-            "Toast the bread to your desired level of crispness.",
-            "While the bread is toasting, mash the avocado in a small bowl.",
-            "Season the mashed avocado with salt, pepper, and any other desired seasonings.",
-            "Spread the avocado mixture evenly over the toasted bread.",
-            "Serve immediately."
+            "Make the Mochi Dough. In a microwave-safe bowl, mix: 1 cup glutinous rice flour, 1/4 cup sugar, 3/4 cup water, Add a few drops of food coloring if desired.",
+            "Microwave on high for 1 minute, then stir. Repeat in 30-second intervals, stirring each time, until the mixture becomes thick, sticky, and slightly translucent (usually around 2 to 3 minutes total).",
+            "Dust & Roll the Dough. Roll the dough out gently to about 1/4 inch (6 mm) thick. Let it cool slightly ",
+            "Cut the dough into circles using a round cutter or cup (about 3-4 inches wide). Working quickly, place a frozen scoop of ice cream/sorbet in the center of a circle.",
+            "Wrap each mochi ball in plastic wrap and freeze for at least 1 hour. Let mochi sit at room temperature for a few minutes before serving for best texture."
         ]
     },
     {
