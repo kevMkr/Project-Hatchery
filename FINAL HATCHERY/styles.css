@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.gradient-bg {
+    min-height: 100vh;
+    background: radial-gradient(circle at 30% 20%, #d6f7b6 40%, transparent 70%),
+                radial-gradient(circle at 70% 70%, #ffe3c1 40%, transparent 80%);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: transparent;
+    box-shadow: none;
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+/* Centered logo and title */
+.header-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Right-aligned navigation buttons */
+.header-right {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 20px;
+    height: 50px;
+    background: rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0px black;
+    padding: 0.5rem 1rem;
+    max-width: 400px;
+    margin: 0 auto 1rem auto;
+}
+
+#searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.1rem;
+    padding: 0.7rem 0.5rem;
+    color: #333;
+}
+
+#searchButton {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    transition: color 0.2s;
+}
+#searchButton:hover {
+    color: #388e3c;
+}
+
+.filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff;
+    color: #6fcf97;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.filter-toggle:hover {
+    background: #6fcf97;
+    color: #fff;
+}
+
+.tag-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    transition: max-height 0.3s, opacity 0.3s;
+    max-height: 100px;
+    opacity: 1;
+}
+.tag-filters.hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.tag-btn {
+    background: #fff;
+    color: #6fcf97;
+    border: 1.5px solid #6fcf97;
+    border-radius: 20px;
+    padding: 0.4rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.tag-btn.active, .tag-btn:hover {
+    background: #6fcf97;
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 0.5rem 2rem 0.5rem;
+}
+
+.recipes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.recipe-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.recipe-card:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+.recipe-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+.recipe-content {
+    padding: 1rem 0.8rem 0.8rem 0.8rem;
+}
+.recipe-title {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: #6fcf97;
+    font-size: 0.85rem;
+}
+.recipe-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.share-button {
+    padding: 0.3rem 0.8rem;
+    background-color: #6fcf97;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+.share-button:hover {
+    background-color: #388e3c;
+}
+
+@media (max-width: 600px) {
+    .recipes-container {
+        grid-template-columns: 1fr;
+    }
+    .header-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    main {
+        padding: 0 0.2rem 2rem 0.2rem;
+    }
+}
+.recipe-detail-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1000;
+    background: linear-gradient(to bottom, #e0ffe0, #ffe0b3),
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1), transparent 70%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.detail-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.2rem 0.5rem 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+.back-btn, .share-btn {
+    background: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #6fcf97;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.back-btn:hover, .share-btn:hover {
+    background: #6fcf97;
+    color: #fff;
+}
+.detail-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    margin-bottom: -32px;
+    z-index: 2;
+}
+.like-btn {
+    position: absolute;
+    top: 180px;
+    right: 32px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #e57373;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.2s, color 0.2s;
+}
+.like-btn.liked, .like-btn:hover {
+    background: #e57373;
+    color: #fff;
+}
+.detail-content {
+    border-radius: 24px;
+    margin-top: 2.5rem;
+    padding: 2rem 1.2rem 1.5rem 1.2rem;
+    width: 95%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#detailTitle {
+    color: #6fcf97;
+    font-size: 1.4rem;
+    font-family: 'Georgia', serif;
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+.detail-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.detail-tags .tag-btn {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 25px;
+    padding: 5px 15px;
+    font-weight: bold;
+    box-shadow: 4px 4px 0px black;
+}
+.detail-times {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.2rem;
+    font-size: 0.98rem;
+    color: #388e3c;
+}
+.detail-times div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+.detail-times span:first-child {
+    font-weight: 500;
+    color: #6fcf97;
+    margin-bottom: 0.2rem;
+}
+.detail-description {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    width: 100%;
+}
+.start-cooking-btn {
+    width: 150%;
+    max-width: 350px;
+    border: none;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 5px 5px;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 600px) {
+    .detail-content {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+        width: 99%;
+    }
+    .detail-image {
+        max-height: 160px;
+    }
+    .like-btn {
+        top: 120px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+.main-btn {
+    background: #fff;
+    color: #00b0ff;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    justify-content: center;
+}
+.main-btn:hover {
+    background: #00b0ff;
+    color: #fff;
+}
+
+.dashboard-btn, .login-btn {
+    background: #fff;
+    color: #00b0ff;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    font-size: 1rem;
+}
+
+.dashboard-btn {
+    color: #00b0ff;
+}
+.dashboard-btn:hover {
+    background: #00b0ff;
+    color: #fff;
+}
+
+.login-btn {
+    color: #6fcf97;
+    background: #f6faf6;
+}
+.login-btn:hover {
+    background: #6fcf97;
+    color: #fff;
+}
+
+.favorites-btn {
+    background: #fff;
+    color: #e57373;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    font-size: 1rem;
+}
+.favorites-btn:hover {
+    background: #e57373;
+    color: #fff;
+}
+
+.card-welcome {
+    background: linear-gradient(to top left, #b2ff59, #ffcc80);
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+.card-graph {
+    border-radius: 15px;
+    padding: 10px 10px 20px 10px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    border: 2px solid black;
+    height: 150px;
+    overflow: hidden;
+} 
+.recipe-step {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.recipe-step h3 {
+  margin-top: 0;
+}
